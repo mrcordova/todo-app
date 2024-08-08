@@ -51,6 +51,7 @@ img {
 main {
   display: grid;
   height: 100%;
+  background-color: var(--Very-Dark-Blue);
 }
 .circle {
   width: 1.5rem;
@@ -74,8 +75,8 @@ main {
   -webkit-appearance: none;
   /* all: unset; */
   position: relative;
-  width: 1.5rem;
-  height: 1.5rem;
+  width: 1.25rem;
+  height: 1.25rem;
   border-radius: 50%;
   /* background-color: transparent; */
   border: 1px solid var(--Very-Dark-Grayish-Blue);
@@ -137,6 +138,7 @@ main {
 
     & > button {
       margin-inline-start: auto;
+      width: 0.8rem;
     }
 
     & .checkbox:checked + p {
@@ -144,6 +146,17 @@ main {
       color: var(--Very-Dark-Grayish-Blue);
     }
   }
+  & > li:first-child {
+    border-top-left-radius: 0.5rem;
+    border-top-right-radius: 0.5rem;
+  }
+  /* & > li:last-child {
+    border-bottom-left-radius: 0.5rem;
+    border-bottom-right-radius: 0.5rem;
+  } */
+}
+
+.todo-list-container {
 }
 .todo-header-container {
   display: flex;
