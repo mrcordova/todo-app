@@ -15,7 +15,7 @@
   --Very-Dark-Grayish-Blue: hsl(235, 19%, 35%);
 }
 
-:root {
+:root.dark-mode {
   --Very-Dark-Blue: hsl(235, 21%, 11%);
   --Very-Dark-Desaturated-Blue: hsl(235, 24%, 19%);
   --Light-Grayish-Blue: hsl(234, 39%, 85%);
@@ -236,5 +236,9 @@ label:has(input[name="filters"]:checked) {
 
   & > button {
     width: 1.3rem;
+
+    &:hover {
+      cursor: pointer;
+    }
   }
 }
