@@ -95,15 +95,24 @@
               <span>5</span>
               items left
             </p>
-            <div class="desktop-filter-options">
-              <p>All</p>
-              <p>Active</p>
-              <p>Completed</p>
+            <div class="filter-options hide">
+              <label for="desktop-all">
+                All
+                <input type="radio" name="filters" id="desktop-all" checked />
+              </label>
+              <label for="desktop-active">
+                Active
+                <input type="radio" name="filters" id="desktop-active" />
+              </label>
+              <label for="desktop-completed">
+                Completed
+                <input type="radio" name="filters" id="desktop-completed" />
+              </label>
             </div>
             <button>Clear Completed</button>
           </div>
         </div>
-        <div class="mobile-filter-options josefin-sans-700">
+        <div class="filter-options josefin-sans-700">
           <label for="all">
             All
             <input type="radio" name="filters" id="all" checked />

@@ -88,7 +88,7 @@ main {
   left: 0;
   top: 2.3rem;
   padding-inline: 1.5rem;
-  gap: 1.4rem;
+  gap: 1rem;
 }
 
 .checkbox {
@@ -140,6 +140,7 @@ main {
   align-self: center;
   color: var(--Very-Dark-Grayish-Blue);
   font-size: 0.8rem;
+  padding-block: 1rem;
 }
 .input-container {
   background-color: var(--Very-Dark-Desaturated-Blue);
@@ -158,7 +159,7 @@ label:has(input):hover {
 label:has(input[name="filters"]:checked) {
   color: var(--Bright-Blue);
 }
-.mobile-filter-options {
+.filter-options {
   display: flex;
   align-self: center;
   justify-content: center;
@@ -169,6 +170,9 @@ label:has(input[name="filters"]:checked) {
   padding-block: 1rem;
   font-size: 0.85rem;
   border-radius: 0.5rem;
+}
+.hide {
+  display: none;
 }
 .todo-list {
   padding: 0;
