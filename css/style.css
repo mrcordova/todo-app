@@ -1,8 +1,12 @@
-@import url("https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100..700;1,100..700&family=Kumbh+Sans:wght@100..900&family=League+Spartan:wght@100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100..700;1,100..700&display=swap");
 
 :root {
   --Bright-Blue: hsl(220, 98%, 61%);
-  /* --Check Background: linear-radient hsl(192, 100%, 67%) to hsl(280, 87%, 65%) */
+  --Check-Background: linear-gradient(
+    to bottom right,
+    hsl(192, 100%, 67%),
+    hsl(280, 87%, 65%)
+  );
 
   --Very-Light-Gray: hsl(0, 0%, 98%);
   --Very-Light-Grayish-Blue: hsl(236, 33%, 92%);
@@ -18,16 +22,18 @@
   --Light-Grayish-Blue-hover: hsl(236, 33%, 92%);
   --Dark-Grayish-Blue: hsl(234, 11%, 52%);
   --Very-Dark-Grayish-Blue: hsl(233, 14%, 35%);
-  --Very-Dark-Grayish-Blue: hsl(237, 14%, 26%);
+  --Very-Dark-Grayish-Blue-2: hsl(237, 14%, 26%);
 }
 
-.poppins-regular {
-  font-family: "Poppins", sans-serif;
+.josefin-sans-400 {
+  font-family: "Josefin Sans", sans-serif;
+  font-optical-sizing: auto;
   font-weight: 400;
   font-style: normal;
 }
-.poppins-bold {
-  font-family: "Poppins", sans-serif;
+.josefin-sans-700 {
+  font-family: "Josefin Sans", sans-serif;
+  font-optical-sizing: auto;
   font-weight: 700;
   font-style: normal;
 }
@@ -61,16 +67,52 @@ main {
   left: 0;
   top: 2.3rem;
   padding-inline: 1.5rem;
-  gap: 1.8rem;
+  gap: 1.4rem;
 }
+
+.checkbox {
+  -webkit-appearance: none;
+  /* all: unset; */
+  position: relative;
+  width: 1.5rem;
+  height: 1.5rem;
+  border-radius: 50%;
+  /* background-color: transparent; */
+  border: 1px solid var(--Very-Dark-Grayish-Blue);
+  cursor: pointer;
+
+  &:checked {
+    background: var(--Check-Background);
+  }
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: 55%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 50%;
+    height: 50%;
+    pointer-events: none;
+    background-image: url(../images/icon-check.svg);
+    background-size: contain;
+    background-repeat: no-repeat;
+    display: none;
+  }
+
+  &:checked::before {
+    display: block;
+  }
+}
+
 .create-input {
   all: unset;
   /* background-color: var(--Very-Dark-Desaturated-Blue); */
   color: var(--Light-Grayish-Blue);
   caret-color: var(--Bright-Blue);
-  padding-block: 1rem;
+  padding-block: 1rem 0.8rem;
   width: 100%;
-  font-size: 0.65rem;
+  font-size: 0.73rem;
 }
 .input-container {
   background-color: var(--Very-Dark-Desaturated-Blue);
@@ -87,17 +129,30 @@ main {
     align-items: center;
     background-color: var(--Very-Dark-Desaturated-Blue);
     border-bottom: 1px solid var(--Very-Dark-Grayish-Blue);
+    color: var(--Light-Grayish-Blue);
     padding-inline: 1.1rem;
+    padding-block: 1rem;
+    font-size: 0.72rem;
+    gap: 0.5rem;
+
+    & > button {
+      margin-inline-start: auto;
+    }
+
+    & .checkbox:checked + p {
+      text-decoration-line: line-through;
+      color: var(--Very-Dark-Grayish-Blue);
+    }
   }
 }
 .todo-header-container {
   display: flex;
   justify-content: space-between;
-
+  align-items: baseline;
   & > h1 {
     color: white;
     letter-spacing: 0.62rem;
-    font-size: 1.75rem;
+    font-size: 1.7rem;
   }
 
   & > button {
