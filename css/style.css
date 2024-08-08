@@ -11,7 +11,7 @@
   --Very-Dark-Grayish-Blue: hsl(235, 19%, 35%);
 }
 
-:root.dark-theme {
+:root {
   --Very-Dark-Blue: hsl(235, 21%, 11%);
   --Very-Dark-Desaturated-Blue: hsl(235, 24%, 19%);
   --Light-Grayish-Blue: hsl(234, 39%, 85%);
@@ -46,6 +46,12 @@ main {
   display: grid;
   height: 100%;
 }
+.circle {
+  width: 1.5rem;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  border: 1px solid var(--Very-Dark-Grayish-Blue);
+}
 .container {
   position: absolute;
   display: flex;
@@ -55,7 +61,24 @@ main {
   left: 0;
   top: 2.3rem;
   padding-inline: 1.5rem;
-  gap: 1rem;
+  gap: 1.8rem;
+}
+.create-input {
+  all: unset;
+  /* background-color: var(--Very-Dark-Desaturated-Blue); */
+  color: var(--Light-Grayish-Blue);
+  caret-color: var(--Bright-Blue);
+  padding-block: 1rem;
+  width: 100%;
+  font-size: 0.65rem;
+}
+.input-container {
+  background-color: var(--Very-Dark-Desaturated-Blue);
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+  padding-inline: 1.1rem;
+  border-radius: 0.2rem;
 }
 
 .todo-header-container {
