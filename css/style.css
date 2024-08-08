@@ -196,9 +196,18 @@ label:has(input[name="filters"]:checked) {
       }
     }
 
-    & .checkbox:checked + p {
+    &:hover {
+      cursor: pointer;
+      color: var(--Light-Grayish-Blue-hover);
+    }
+    & label:has(.checkbox:checked) {
       text-decoration-line: line-through;
       color: var(--Very-Dark-Grayish-Blue);
+    }
+    & > label {
+      display: flex;
+      gap: 0.5rem;
+      align-items: flex-end;
     }
   }
   & > li:first-child {
