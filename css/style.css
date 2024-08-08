@@ -80,7 +80,16 @@ main {
   padding-inline: 1.1rem;
   border-radius: 0.2rem;
 }
-
+.todo-list {
+  padding: 0;
+  & > li {
+    display: flex;
+    align-items: center;
+    background-color: var(--Very-Dark-Desaturated-Blue);
+    border-bottom: 1px solid var(--Very-Dark-Grayish-Blue);
+    padding-inline: 1.1rem;
+  }
+}
 .todo-header-container {
   display: flex;
   justify-content: space-between;
