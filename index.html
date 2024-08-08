@@ -47,11 +47,7 @@
         <div class="todo-list-container">
           <ul class="todo-list">
             <li>
-              <input
-                type="checkbox"
-                name="checkmark"
-                id="checkmark"
-                class="checkbox" />
+              <input type="checkbox" name="checkmark" class="checkbox" />
 
               <p>Complete online Javascript course</p>
               <button>
@@ -59,67 +55,47 @@
               </button>
             </li>
             <li>
-              <input
-                type="checkbox"
-                name="checkmark"
-                id="checkmark"
-                class="checkbox" />
+              <input type="checkbox" name="checkmark" class="checkbox" />
               <p>Jog around the park 3x</p>
               <button>
                 <img src="./images/icon-cross.svg" alt="X" />
               </button>
             </li>
             <li>
-              <input
-                type="checkbox"
-                name="checkmark"
-                id="checkmark"
-                class="checkbox" />
+              <input type="checkbox" name="checkmark" class="checkbox" />
               <p>10 minutes meditation</p>
               <button>
                 <img src="./images/icon-cross.svg" alt="X" />
               </button>
             </li>
             <li>
-              <input
-                type="checkbox"
-                name="checkmark"
-                id="checkmark"
-                class="checkbox" />
+              <input type="checkbox" name="checkmark" class="checkbox" />
               <p>Read for 1 hour</p>
               <button>
                 <img src="./images/icon-cross.svg" alt="X" />
               </button>
             </li>
             <li>
-              <input
-                type="checkbox"
-                name="checkmark"
-                id="checkmark"
-                class="checkbox" />
+              <input type="checkbox" name="checkmark" class="checkbox" />
               <p>Pick up groceries</p>
               <button>
                 <img src="./images/icon-cross.svg" alt="X" />
               </button>
             </li>
             <li>
-              <input
-                type="checkbox"
-                name="checkmark"
-                id="checkmark"
-                class="checkbox" />
+              <input type="checkbox" name="checkmark" class="checkbox" />
               <p>Complete Todo App on Frontend Mentor</p>
               <button>
                 <img src="./images/icon-cross.svg" alt="X" />
               </button>
             </li>
           </ul>
-          <div>
+          <div class="bottom-list-items josefin-sans-700">
             <p>
               <span>5</span>
               items left
             </p>
-            <div>
+            <div class="desktop-filter-options">
               <p>All</p>
               <p>Active</p>
               <p>Completed</p>
@@ -127,7 +103,23 @@
             <button>Clear Completed</button>
           </div>
         </div>
-        <p>Drag and drop to reorder list</p>
+        <div class="mobile-filter-options josefin-sans-700">
+          <label for="all">
+            All
+            <input type="radio" name="filters" id="all" checked />
+          </label>
+          <label for="active">
+            Active
+            <input type="radio" name="filters" id="active" />
+          </label>
+          <label for="completed">
+            Completed
+            <input type="radio" name="filters" id="completed" />
+          </label>
+        </div>
+        <p class="drag-instruct josefin-sans-700">
+          Drag and drop to reorder list
+        </p>
       </div>
     </main>
 

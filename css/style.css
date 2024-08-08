@@ -53,6 +53,26 @@ main {
   height: 100%;
   background-color: var(--Very-Dark-Blue);
 }
+
+.bottom-list-items {
+  color: var(--Very-Dark-Grayish-Blue);
+  display: flex;
+  justify-content: space-between;
+  background-color: var(--Very-Dark-Desaturated-Blue);
+  border-bottom-left-radius: 0.5rem;
+  border-bottom-right-radius: 0.5rem;
+  padding-inline: 1.1rem;
+  padding-block: 1rem;
+  font-size: 0.7rem;
+
+  & .desktop-filter-options {
+    display: none;
+  }
+
+  & > button:hover {
+    cursor: pointer;
+  }
+}
 .circle {
   width: 1.5rem;
   aspect-ratio: 1;
@@ -115,6 +135,12 @@ main {
   width: 100%;
   font-size: 0.73rem;
 }
+
+.drag-instruct {
+  align-self: center;
+  color: var(--Very-Dark-Grayish-Blue);
+  font-size: 0.8rem;
+}
 .input-container {
   background-color: var(--Very-Dark-Desaturated-Blue);
   display: flex;
@@ -122,6 +148,27 @@ main {
   gap: 0.8rem;
   padding-inline: 1.1rem;
   border-radius: 0.2rem;
+}
+input[name="filters"] {
+  display: none;
+}
+label:has(input):hover {
+  cursor: pointer;
+}
+label:has(input[name="filters"]:checked) {
+  color: var(--Bright-Blue);
+}
+.mobile-filter-options {
+  display: flex;
+  align-self: center;
+  justify-content: center;
+  gap: 1.3rem;
+  background-color: var(--Very-Dark-Desaturated-Blue);
+  color: var(--Very-Dark-Grayish-Blue);
+  width: 100%;
+  padding-block: 1rem;
+  font-size: 0.85rem;
+  border-radius: 0.5rem;
 }
 .todo-list {
   padding: 0;
@@ -139,6 +186,10 @@ main {
     & > button {
       margin-inline-start: auto;
       width: 0.8rem;
+
+      &:hover {
+        cursor: pointer;
+      }
     }
 
     & .checkbox:checked + p {
