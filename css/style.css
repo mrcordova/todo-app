@@ -11,23 +11,25 @@
   --list-text: hsl(236, 9%, 61%);
   --list-bg: hsl(0, 0%, 98%);
   --border: hsl(234, 39%, 85%);
+  /* --li-text: hsl(233, 11%, 84%); */
+  --li-text: hsl(235, 19%, 35%);
 
   /* --Very-Light-Gray: hsl(0, 0%, 98%); */
   /* --Very-Light-Grayish-Blue: hsl(236, 33%, 92%); */
-  --Light-Grayish-Blue: hsl(233, 11%, 84%);
+  /* --Light-Grayish-Blue: hsl(233, 11%, 84%); */
   /* --Dark-Grayish-Blue: hsl(236, 9%, 61%); */
   --Very-Dark-Grayish-Blue: hsl(235, 19%, 35%);
 }
-/* border: 1px solid var(--Very-Dark-Grayish-Blue);
-border: 1px solid var(--Light-Grayish-Blue); */
+
 :root.dark-mode {
   --main-bg: hsl(235, 21%, 11%);
   --list-text: hsl(233, 14%, 35%);
   --list-bg: hsl(235, 24%, 19%);
   --border: hsl(235, 19%, 35%);
+  /* --li-text: hsl(233, 14%, 35%); */
+  --li-text: hsl(234, 39%, 85%);
   /* --Very-Dark-Blue: hsl(235, 21%, 11%); */
   /* --Very-Dark-Desaturated-Blue: hsl(235, 24%, 19%); */
-  --Light-Grayish-Blue: hsl(234, 39%, 85%);
   --Light-Grayish-Blue-hover: hsl(236, 33%, 92%);
   --Dark-Grayish-Blue: hsl(234, 11%, 52%);
   /* --Very-Dark-Grayish-Blue: hsl(233, 14%, 35%); */
@@ -142,8 +144,8 @@ main {
   all: unset;
 
   background-color: var(--list-bg);
-  color: var(--Light-Grayish-Blue);
-  color: var(--Very-Dark-Grayish-Blue);
+
+  color: var(--li-text);
   caret-color: var(--Bright-Blue);
   padding-block: 1rem 0.8rem;
   width: 100%;
@@ -200,8 +202,8 @@ label:has(input[name="filters"]:checked) {
     background-color: var(--list-bg);
 
     border-bottom: 1px solid var(--border);
-    color: var(--Light-Grayish-Blue);
-    color: var(--Very-Dark-Grayish-Blue);
+
+    color: var(--li-text);
     padding-inline: 1.1rem;
     padding-block: 1rem;
     font-size: 0.72rem;
