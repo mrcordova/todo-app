@@ -4,10 +4,38 @@ const todoInput = document.getElementById("create-todo");
 const todoList = document.querySelector(".todo-list");
 const totalListItems = document.querySelector(".total-list-items");
 const clearBtn = document.querySelector(".clear-btn");
+const allBtns = document.querySelectorAll("#all, #desktop-all");
+const activeBtns = document.querySelectorAll("#active, #desktop-active");
+const completedBtns = document.querySelectorAll(
+  "#completed, #desktop-completed"
+);
 
 function removeTodoItem(e) {
   e.currentTarget.parentElement.remove();
   totalListItems.textContent = todoList.children.length;
+}
+
+function showAll() {
+  for (const liEle of todoList.children) {
+    liEle.classList.toggle("hide", false);
+  }
+}
+
+function showActive() {
+  for (const liEle of todoList.children) {
+    liEle.classList.toggle(
+      "hide",
+      liEle.firstElementChild.firstElementChild.checked
+    );
+  }
+}
+function showCompleted() {
+  for (const liEle of todoList.children) {
+    liEle.classList.toggle(
+      "hide",
+      !liEle.firstElementChild.firstElementChild.checked
+    );
+  }
 }
 themeBtn.addEventListener("click", (e) => {
   const imgEle = e.currentTarget.children[0];
@@ -65,3 +93,15 @@ clearBtn.addEventListener("click", () => {
   }
   totalListItems.textContent = 0;
 });
+
+for (const allBtn of allBtns) {
+  allBtn.addEventListener("click", showAll);
+}
+
+for (const activeBtn of activeBtns) {
+  activeBtn.addEventListener("click", showActive);
+}
+
+for (const completedBtn of completedBtns) {
+  completedBtn.addEventListener("click", showCompleted);
+}
