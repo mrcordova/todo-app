@@ -91,7 +91,7 @@ clearBtn.addEventListener("click", () => {
       todoList.children[i].remove();
     }
   }
-  totalListItems.textContent = 0;
+  totalListItems.textContent = todoList.children.length;
 });
 
 for (const allBtn of allBtns) {
