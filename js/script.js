@@ -1,7 +1,11 @@
 const themeBtn = document.querySelector(".theme-btn");
 const picEle = document.querySelector("picture");
 const todoInput = document.getElementById("create-todo");
+const todoList = document.querySelector(".todo-list");
 
+function removeTodo(e) {
+  e.currentTarget.remove();
+}
 themeBtn.addEventListener("click", (e) => {
   const imgEle = e.currentTarget.children[0];
   const srcSet = picEle.children[0];
@@ -28,6 +32,20 @@ themeBtn.addEventListener("click", (e) => {
 
 todoInput.addEventListener("keydown", (e) => {
   if (e.code == "Enter") {
-    console.log("enter pressed");
+    todoList.insertAdjacentHTML(
+      "beforeend",
+      `<li>
+            <label>
+                <input type="checkbox" name="checkmark" class="checkbox" />
+                ${e.currentTarget.value}
+            </label>
+            <button>
+                <img src="./images/icon-cross.svg" alt="X" />
+            </button>
+        </li>`
+    );
+    todoList.lastChild.addEventListener("click", removeTodo);
+    e.currentTarget.value = "";
+    // console.log("enter pressed");
   }
 });
