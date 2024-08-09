@@ -249,6 +249,10 @@ label:has(input[name="filters"]:checked) {
     &.hide {
       display: none;
     }
+
+    &.dragging {
+      cursor: grabbing;
+    }
   }
   & li:first-child {
     border-top-left-radius: 0.5rem;

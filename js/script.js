@@ -10,7 +10,7 @@ const completedBtns = document.querySelectorAll(
   "#completed, #desktop-completed"
 );
 const checkInputs = document.querySelectorAll('input[name="checkmark"]');
-
+let dragOverEle;
 function removeTodoItem(e) {
   e.currentTarget.parentElement.remove();
   totalListItems.textContent = todoList.children.length;
@@ -52,6 +52,28 @@ function updateFilters(e) {
     showCompleted();
   }
 }
+
+function dragStart(e) {
+  e.currentTarget.classList.add("dragging");
+  e.dataTransfer.effectAllowed = "move";
+
+  e.dataTransfer.clearData();
+  e.dataTransfer.setData("text/plain", null);
+}
+
+function dragEnd(e) {
+  e.currentTarget.classList.remove("dragging");
+  if (e.currentTarget !== dragOverEle) {
+    todoList.removeChild(e.currentTarget);
+    dragOverEle.insertAdjacentElement("afterend", e.currentTarget);
+  }
+}
+function dragOver(e) {
+  // console.log("dragover", e.currentTarget);
+  e.preventDefault();
+  dragOverEle = e.currentTarget;
+}
+
 themeBtn.addEventListener("click", (e) => {
   const imgEle = e.currentTarget.children[0];
   const srcSet = picEle.children[0];
@@ -80,7 +102,7 @@ todoInput.addEventListener("keydown", (e) => {
   if (e.code == "Enter") {
     todoList.insertAdjacentHTML(
       "beforeend",
-      `<li>
+      `<li draggable="true">
             <label>
                 <input type="checkbox" name="checkmark" class="checkbox" />
                 ${e.currentTarget.value}
@@ -90,6 +112,7 @@ todoInput.addEventListener("keydown", (e) => {
             </button>
         </li>`
     );
+    todoList.lastElementChild.addEventListener("dragstart", dragStart);
     todoList.lastElementChild.lastElementChild.addEventListener(
       "click",
       removeTodoItem
@@ -102,7 +125,9 @@ todoInput.addEventListener("keydown", (e) => {
     totalListItems.textContent = todoList.children.length;
   }
 });
-
+todoList.addEventListener("dragover", (e) => {
+  e.preventDefault();
+});
 clearBtn.addEventListener("click", () => {
   let i = parseInt(totalListItems.textContent);
   while (i--) {
@@ -127,4 +152,10 @@ for (const completedBtn of completedBtns) {
 
 for (const checkInput of checkInputs) {
   checkInput.addEventListener("click", updateFilters);
+}
+
+for (const liEle of todoList.children) {
+  liEle.addEventListener("dragstart", dragStart);
+  liEle.addEventListener("dragend", dragEnd);
+  liEle.addEventListener("dragover", dragOver);
 }
