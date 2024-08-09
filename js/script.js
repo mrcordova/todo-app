@@ -11,8 +11,6 @@ const completedBtns = document.querySelectorAll(
 );
 const checkInputs = document.querySelectorAll('input[name="checkmark"]');
 
-console.log(checkInputs);
-
 function removeTodoItem(e) {
   e.currentTarget.parentElement.remove();
   totalListItems.textContent = todoList.children.length;
@@ -95,6 +93,10 @@ todoInput.addEventListener("keydown", (e) => {
     todoList.lastElementChild.lastElementChild.addEventListener(
       "click",
       removeTodoItem
+    );
+    todoList.lastElementChild.firstElementChild.firstElementChild.addEventListener(
+      "click",
+      updateFilters
     );
     e.currentTarget.value = "";
     totalListItems.textContent = todoList.children.length;
