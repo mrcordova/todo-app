@@ -113,6 +113,8 @@ todoInput.addEventListener("keydown", (e) => {
         </li>`
     );
     todoList.lastElementChild.addEventListener("dragstart", dragStart);
+    todoList.lastElementChild.addEventListener("dragend", dragEnd);
+    todoList.lastElementChild.addEventListener("dragover", dragOver);
     todoList.lastElementChild.lastElementChild.addEventListener(
       "click",
       removeTodoItem
