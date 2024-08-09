@@ -9,6 +9,9 @@ const activeBtns = document.querySelectorAll("#active, #desktop-active");
 const completedBtns = document.querySelectorAll(
   "#completed, #desktop-completed"
 );
+const checkInputs = document.querySelectorAll('input[name="checkmark"]');
+
+console.log(checkInputs);
 
 function removeTodoItem(e) {
   e.currentTarget.parentElement.remove();
@@ -35,6 +38,20 @@ function showCompleted() {
       "hide",
       !liEle.firstElementChild.firstElementChild.checked
     );
+  }
+}
+function updateFilters(e) {
+  let allTab = false;
+  for (const allBtn of allBtns) {
+    if (allBtn.checked) {
+      allTab = true;
+    }
+  }
+
+  if (e.currentTarget.checked && !allTab) {
+    showActive();
+  } else if (!e.currentTarget.checked && !allTab) {
+    showCompleted();
   }
 }
 themeBtn.addEventListener("click", (e) => {
@@ -104,4 +121,8 @@ for (const activeBtn of activeBtns) {
 
 for (const completedBtn of completedBtns) {
   completedBtn.addEventListener("click", showCompleted);
+}
+
+for (const checkInput of checkInputs) {
+  checkInput.addEventListener("click", updateFilters);
 }
