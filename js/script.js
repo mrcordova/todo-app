@@ -1,5 +1,6 @@
 const themeBtn = document.querySelector(".theme-btn");
 const picEle = document.querySelector("picture");
+const todoInput = document.getElementById("create-todo");
 
 themeBtn.addEventListener("click", (e) => {
   const imgEle = e.currentTarget.children[0];
@@ -23,4 +24,10 @@ themeBtn.addEventListener("click", (e) => {
     srcSet.setAttribute("alt", "dark");
   }
   document.documentElement.classList.toggle("dark-mode");
+});
+
+todoInput.addEventListener("keydown", (e) => {
+  if (e.code == "Enter") {
+    console.log("enter pressed");
+  }
 });
