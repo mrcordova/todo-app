@@ -74,9 +74,15 @@ main {
   background-color: var(--list-bg);
   border-bottom-left-radius: 0.5rem;
   border-bottom-right-radius: 0.5rem;
+
+  /* Mobile */
+  /* padding-inline: 1.1rem; */
+  /* padding-block: 1rem; */
+  /* font-size: 0.7rem; */
+  /* Desktop */
   padding-inline: 1.1rem;
-  padding-block: 1rem;
-  font-size: 0.7rem;
+  padding-block: 0rem;
+  font-size: 0.8rem;
 
   & .filter-options {
     display: none;
@@ -317,8 +323,14 @@ label:has(input[name="filters"]:checked, input[name="desk-filters"]:checked) {
 
 @media (min-width: 30rem) {
   .bottom-list-items {
+    align-items: center;
     & .filter-options {
       display: flex;
+    }
+
+    & > p,
+    > button {
+      width: 22ch;
     }
   }
 
