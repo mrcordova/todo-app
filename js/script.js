@@ -3,6 +3,7 @@ const picEle = document.querySelector("picture");
 const todoInput = document.getElementById("create-todo");
 const todoList = document.querySelector(".todo-list");
 const totalListItems = document.querySelector(".total-list-items");
+const clearBtn = document.querySelector(".clear-btn");
 
 function removeTodoItem(e) {
   e.currentTarget.parentElement.remove();
@@ -53,4 +54,14 @@ todoInput.addEventListener("keydown", (e) => {
     e.currentTarget.value = "";
     totalListItems.textContent = todoList.children.length;
   }
+});
+
+clearBtn.addEventListener("click", () => {
+  let i = parseInt(totalListItems.textContent);
+  while (i--) {
+    if (todoList.children[i].firstElementChild.firstElementChild.checked) {
+      todoList.children[i].remove();
+    }
+  }
+  totalListItems.textContent = 0;
 });
