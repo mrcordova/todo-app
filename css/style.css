@@ -250,7 +250,8 @@ label:has(input[name="filters"]:checked) {
       display: none;
     }
   }
-  & > li:first-child {
+  & li[class*="hide"] + li:not(.hide),
+  li:first-child {
     border-top-left-radius: 0.5rem;
     border-top-right-radius: 0.5rem;
   }
