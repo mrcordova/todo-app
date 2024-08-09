@@ -2,9 +2,11 @@ const themeBtn = document.querySelector(".theme-btn");
 const picEle = document.querySelector("picture");
 const todoInput = document.getElementById("create-todo");
 const todoList = document.querySelector(".todo-list");
+const totalListItems = document.querySelector(".total-list-items");
 
-function removeTodo(e) {
-  e.currentTarget.remove();
+function removeTodoItem(e) {
+  e.currentTarget.parentElement.remove();
+  totalListItems.textContent = todoList.children.length;
 }
 themeBtn.addEventListener("click", (e) => {
   const imgEle = e.currentTarget.children[0];
@@ -44,8 +46,11 @@ todoInput.addEventListener("keydown", (e) => {
             </button>
         </li>`
     );
-    todoList.lastChild.addEventListener("click", removeTodo);
+    todoList.lastElementChild.lastElementChild.addEventListener(
+      "click",
+      removeTodoItem
+    );
     e.currentTarget.value = "";
-    // console.log("enter pressed");
+    totalListItems.textContent = todoList.children.length;
   }
 });
