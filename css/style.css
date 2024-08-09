@@ -84,6 +84,7 @@ main {
 
   & > button:hover {
     cursor: pointer;
+    color: var(--li-text);
   }
 }
 .circle {
@@ -135,6 +136,9 @@ main {
     display: none;
   }
 
+  &:hover {
+    border: 1px solid var(--Check-Background);
+  }
   &:checked::before {
     display: block;
   }
@@ -189,6 +193,11 @@ label:has(input[name="filters"]:checked) {
   padding-block: 1rem;
   font-size: 0.85rem;
   border-radius: 0.5rem;
+
+  & > label:hover {
+    cursor: pointer;
+    color: var(--li-text);
+  }
 }
 .hide {
   display: none;
