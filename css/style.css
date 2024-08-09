@@ -137,7 +137,10 @@ main {
   }
 
   &:hover {
-    border: 1px solid var(--Check-Background);
+    background: linear-gradient(var(--list-bg) 0 0) padding-box,
+      var(--Check-Background) border-box;
+    border: 1px solid transparent;
+    border-radius: 50%;
   }
   &:checked::before {
     display: block;
