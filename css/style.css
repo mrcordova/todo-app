@@ -11,13 +11,8 @@
   --list-text: hsl(236, 9%, 61%);
   --list-bg: hsl(0, 0%, 98%);
   --border: hsl(234, 39%, 85%);
-  /* --li-text: hsl(233, 11%, 84%); */
   --li-text: hsl(235, 19%, 35%);
 
-  /* --Very-Light-Gray: hsl(0, 0%, 98%); */
-  /* --Very-Light-Grayish-Blue: hsl(236, 33%, 92%); */
-  /* --Light-Grayish-Blue: hsl(233, 11%, 84%); */
-  /* --Dark-Grayish-Blue: hsl(236, 9%, 61%); */
   --Very-Dark-Grayish-Blue: hsl(235, 19%, 35%);
 }
 
@@ -26,13 +21,9 @@
   --list-text: hsl(233, 14%, 35%);
   --list-bg: hsl(235, 24%, 19%);
   --border: hsl(235, 19%, 35%);
-  /* --li-text: hsl(233, 14%, 35%); */
   --li-text: hsl(234, 39%, 85%);
-  /* --Very-Dark-Blue: hsl(235, 21%, 11%); */
-  /* --Very-Dark-Desaturated-Blue: hsl(235, 24%, 19%); */
   --Light-Grayish-Blue-hover: hsl(236, 33%, 92%);
   --Dark-Grayish-Blue: hsl(234, 11%, 52%);
-  /* --Very-Dark-Grayish-Blue: hsl(233, 14%, 35%); */
   --Very-Dark-Grayish-Blue-2: hsl(237, 14%, 26%);
 }
 
@@ -77,14 +68,8 @@ main {
 
   padding-block: clamp(0rem, 1.3521rem + -1.5023vw, 1rem);
   font-size: clamp(0.7rem, 0.6648rem + 0.1502vw, 0.8rem);
-  /* Mobile */
-  /* padding-inline: 1.1rem; */
-  /* padding-block: 1rem; */
-  /* font-size: 0.7rem; */
-  /* Desktop */
+
   padding-inline: 1.1rem;
-  /* padding-block: 0rem; */
-  /* font-size: 0.8rem; */
 
   & .filter-options {
     display: none;
@@ -101,10 +86,6 @@ main {
   border: 1px solid var(--border);
 
   width: clamp(1.5rem, 1.4296rem + 0.3005vw, 1.7rem);
-  /* Mobile */
-  /* width: 1.5rem; */
-  /* Desktop */
-  /* width: 1.7rem; */
 }
 .container {
   position: absolute;
@@ -113,21 +94,17 @@ main {
   grid-row: 1;
   right: 0;
   left: 0;
-  /* Mobile */
-  /* top: 2.3rem; */
+
   margin-inline: 1.5rem;
-  /* gap: 1rem; */
-  /* Desktop */
+
   gap: clamp(1rem, 0.7183rem + 1.2019vw, 1.8rem);
   top: 2.3rem;
 
-  /* gap: 1.8rem; */
   max-inline-size: 33.8rem;
 }
 
 .checkbox {
   -webkit-appearance: none;
-  /* all: unset; */
   position: relative;
   border-radius: 50%;
 
@@ -136,12 +113,6 @@ main {
 
   width: clamp(1.25rem, 1.162rem + 0.3756vw, 1.5rem);
   height: clamp(1.25rem, 1.162rem + 0.3756vw, 1.5rem);
-  /* Mobile */
-  /* width: 1.25rem; */
-  /* height: 1.25rem; */
-  /* Desktop */
-  /* width: 1.5rem; */
-  /* height: 1.5rem; */
 
   &:checked {
     background: var(--Check-Background);
@@ -185,12 +156,6 @@ main {
   padding-block: clamp(1rem, 0.8944rem + 0.4507vw, 1.3rem)
     clamp(0.8rem, 0.6944rem + 0.4507vw, 1.1rem);
   font-size: clamp(0.73rem, 0.5997rem + 0.5559vw, 1.1rem);
-  /* Mobile */
-  /* padding-block: 1rem 0.8rem; */
-  /* font-size: 0.73rem; */
-  /* Desktop */
-  /* padding-block: 1.3rem 1.1rem; */
-  /* font-size: 1.1rem; */
 }
 
 .drag-instruct {
@@ -206,11 +171,7 @@ main {
   align-items: center;
   border-radius: 0.2rem;
   gap: clamp(0.8rem, 0.5535rem + 1.0516vw, 1.5rem);
-  /* Mobile */
-  /* gap: 0.8rem; */
-  /* padding-inline: 1.1rem; */
-  /* Desktop */
-  /* gap: 1.5rem; */
+
   padding-inline: 1.1rem;
 }
 input[name="filters"],
@@ -255,23 +216,13 @@ label:has(input[name="filters"]:checked, input[name="desk-filters"]:checked) {
     color: var(--li-text);
 
     font-size: clamp(0.72rem, 0.5862rem + 0.5709vw, 1.1rem);
-    /* Mobile */
-    /* padding-inline: 1.1rem; */
-    /* padding-block: 1rem; */
-    /* font-size: 0.72rem; */
-    /* gap: 0.5rem; */
-    /* Desktop */
+
     padding-inline: 1.1rem;
     padding-block: 1rem;
-    /* font-size: 1.1rem; */
     gap: 0.5rem;
 
     & > button {
       width: clamp(0.8rem, 0.7296rem + 0.3005vw, 1rem);
-      /* Mobile */
-      /* width: 0.8rem; */
-      /* Desktop */
-      /* width: 1rem; */
 
       &:hover {
         cursor: pointer;
@@ -293,10 +244,6 @@ label:has(input[name="filters"]:checked, input[name="desk-filters"]:checked) {
       width: 100%;
 
       gap: clamp(0.5rem, 0.1831rem + 1.3521vw, 1.4rem);
-      /*Mobile  */
-      /* gap: 0.5rem; */
-      /* Desktop */
-      /* gap: 1.4rem; */
     }
     &.hide {
       display: none;
@@ -320,20 +267,10 @@ label:has(input[name="filters"]:checked, input[name="desk-filters"]:checked) {
     color: white;
     letter-spacing: clamp(0.62rem, 0.5214rem + 0.4207vw, 0.9rem);
     font-size: clamp(1.7rem, 1.4183rem + 1.2019vw, 2.5rem);
-    /* Mobile */
-    /* letter-spacing: 0.62rem; */
-    /* font-size: 1.7rem; */
-    /* Desktop */
-    /* letter-spacing: 0.9rem; */
-    /* font-size: 2.5rem; */
   }
 
   & > button {
     width: clamp(1.3rem, 1.1944rem + 0.4507vw, 1.6rem);
-    /* Mobile */
-    /* width: 1.3rem; */
-    /* Desktop */
-    /* width: 1.6rem; */
 
     &:hover {
       cursor: pointer;
