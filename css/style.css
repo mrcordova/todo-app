@@ -7,21 +7,30 @@
     hsl(192, 100%, 67%),
     hsl(280, 87%, 65%)
   );
+  --main-bg: hsl(236, 33%, 92%);
+  --list-text: hsl(236, 9%, 61%);
+  --list-bg: hsl(0, 0%, 98%);
+  --border: hsl(234, 39%, 85%);
 
-  --Very-Light-Gray: hsl(0, 0%, 98%);
-  --Very-Light-Grayish-Blue: hsl(236, 33%, 92%);
+  /* --Very-Light-Gray: hsl(0, 0%, 98%); */
+  /* --Very-Light-Grayish-Blue: hsl(236, 33%, 92%); */
   --Light-Grayish-Blue: hsl(233, 11%, 84%);
-  --Dark-Grayish-Blue: hsl(236, 9%, 61%);
+  /* --Dark-Grayish-Blue: hsl(236, 9%, 61%); */
   --Very-Dark-Grayish-Blue: hsl(235, 19%, 35%);
 }
-
+/* border: 1px solid var(--Very-Dark-Grayish-Blue);
+border: 1px solid var(--Light-Grayish-Blue); */
 :root.dark-mode {
-  --Very-Dark-Blue: hsl(235, 21%, 11%);
-  --Very-Dark-Desaturated-Blue: hsl(235, 24%, 19%);
+  --main-bg: hsl(235, 21%, 11%);
+  --list-text: hsl(233, 14%, 35%);
+  --list-bg: hsl(235, 24%, 19%);
+  --border: hsl(235, 19%, 35%);
+  /* --Very-Dark-Blue: hsl(235, 21%, 11%); */
+  /* --Very-Dark-Desaturated-Blue: hsl(235, 24%, 19%); */
   --Light-Grayish-Blue: hsl(234, 39%, 85%);
   --Light-Grayish-Blue-hover: hsl(236, 33%, 92%);
   --Dark-Grayish-Blue: hsl(234, 11%, 52%);
-  --Very-Dark-Grayish-Blue: hsl(233, 14%, 35%);
+  /* --Very-Dark-Grayish-Blue: hsl(233, 14%, 35%); */
   --Very-Dark-Grayish-Blue-2: hsl(237, 14%, 26%);
 }
 
@@ -51,14 +60,16 @@ img {
 main {
   display: grid;
   height: 100%;
-  background-color: var(--Very-Dark-Blue);
+
+  background-color: var(--main-bg);
 }
 
 .bottom-list-items {
-  color: var(--Very-Dark-Grayish-Blue);
+  color: var(--list-text);
   display: flex;
   justify-content: space-between;
-  background-color: var(--Very-Dark-Desaturated-Blue);
+
+  background-color: var(--list-bg);
   border-bottom-left-radius: 0.5rem;
   border-bottom-right-radius: 0.5rem;
   padding-inline: 1.1rem;
@@ -77,7 +88,8 @@ main {
   width: 1.5rem;
   aspect-ratio: 1;
   border-radius: 50%;
-  border: 1px solid var(--Very-Dark-Grayish-Blue);
+
+  border: 1px solid var(--border);
 }
 .container {
   position: absolute;
@@ -98,8 +110,8 @@ main {
   width: 1.25rem;
   height: 1.25rem;
   border-radius: 50%;
-  /* background-color: transparent; */
-  border: 1px solid var(--Very-Dark-Grayish-Blue);
+
+  border: 1px solid var(--border);
   cursor: pointer;
 
   &:checked {
@@ -128,8 +140,10 @@ main {
 
 .create-input {
   all: unset;
-  /* background-color: var(--Very-Dark-Desaturated-Blue); */
+
+  background-color: var(--list-bg);
   color: var(--Light-Grayish-Blue);
+  color: var(--Very-Dark-Grayish-Blue);
   caret-color: var(--Bright-Blue);
   padding-block: 1rem 0.8rem;
   width: 100%;
@@ -138,12 +152,13 @@ main {
 
 .drag-instruct {
   align-self: center;
-  color: var(--Very-Dark-Grayish-Blue);
+
+  color: var(--list-text);
   font-size: 0.8rem;
   padding-block: 1rem;
 }
 .input-container {
-  background-color: var(--Very-Dark-Desaturated-Blue);
+  background-color: var(--list-bg);
   display: flex;
   align-items: center;
   gap: 0.8rem;
@@ -164,8 +179,10 @@ label:has(input[name="filters"]:checked) {
   align-self: center;
   justify-content: center;
   gap: 1.3rem;
-  background-color: var(--Very-Dark-Desaturated-Blue);
-  color: var(--Very-Dark-Grayish-Blue);
+
+  background-color: var(--list-bg);
+
+  color: var(--list-text);
   width: 100%;
   padding-block: 1rem;
   font-size: 0.85rem;
@@ -179,9 +196,12 @@ label:has(input[name="filters"]:checked) {
   & > li {
     display: flex;
     align-items: center;
-    background-color: var(--Very-Dark-Desaturated-Blue);
-    border-bottom: 1px solid var(--Very-Dark-Grayish-Blue);
+
+    background-color: var(--list-bg);
+
+    border-bottom: 1px solid var(--border);
     color: var(--Light-Grayish-Blue);
+    color: var(--Very-Dark-Grayish-Blue);
     padding-inline: 1.1rem;
     padding-block: 1rem;
     font-size: 0.72rem;
@@ -202,7 +222,8 @@ label:has(input[name="filters"]:checked) {
     }
     & label:has(.checkbox:checked) {
       text-decoration-line: line-through;
-      color: var(--Very-Dark-Grayish-Blue);
+
+      color: var(--border);
     }
     & > label {
       display: flex;
@@ -222,8 +243,6 @@ label:has(input[name="filters"]:checked) {
   } */
 }
 
-.todo-list-container {
-}
 .todo-header-container {
   display: flex;
   justify-content: space-between;
