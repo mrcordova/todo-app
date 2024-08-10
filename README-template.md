@@ -101,6 +101,11 @@ Use this section to outline areas that you want to continue focusing on in futur
 ### Useful resources
 
 https://dev.to/themodernweb/checkbox-css-style-gradient-checkbox-with-pure-css-custom-input-css-3gko
+https://developer.mozilla.org/en-US/docs/Web/API/DataTransfer/setData
+https://www.w3schools.com/howto/howto_js_toggle_dark_mode.asp
+https://stackoverflow.com/questions/51496204/border-gradient-with-border-radius/51496341#51496341
+https://stackoverflow.com/questions/9882284/looping-through-array-and-removing-items-without-breaking-for-loop
+https://stackoverflow.com/questions/10588607/tutorial-for-html5-dragdrop-sortable-list
 
 - [Example resource 1](https://www.example.com) - This helped me for XYZ reason. I really liked this pattern and will use it going forward.
 - [Example resource 2](https://www.example.com) - This is an amazing article which helped me finally understand XYZ. I'd recommend it to anyone still learning this concept.
