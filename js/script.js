@@ -99,7 +99,7 @@ themeBtn.addEventListener("click", (e) => {
 });
 
 todoInput.addEventListener("keydown", (e) => {
-  if (e.code == "Enter") {
+  if (e.key == "Enter") {
     todoList.insertAdjacentHTML(
       "beforeend",
       `<li draggable="true">
